@@ -68,3 +68,38 @@ var pokemonRepository = (function () {
       showModal(pokemon);
     });
   }
+
+  function showModal(pokemon) {
+    $modalContainer.innerHTML = '';
+    // $('#modal-container').append('<div id='modal'></div>');
+    $('<div id="modal"></div>').appendTo('#modal-container');
+    var $modal = $('#modal');
+    $modal.addClass('modal');
+
+    $('<button id="modal-close"></button>').appendTo('#modal');
+    var $modalCloseButton = $('#modal-close');
+    $modalCloseButton.addClass('modal-close');
+    $modalCloseButton.innerText = 'Close';
+    $('$modalCloseButton').click(function() {
+      hideModal();
+    });
+
+    $('<h2 id="$modalPokemonName"></h2>').appendTo('modal');
+    var $modalPokemonName = $('#modalPokemonName');
+    $modalPokemonName.innerText = pokemon.name;
+
+    $('<img></img>').appendTo('modal');
+    var $modalPokemonImg = $('img');
+    $modalPokemonImg.src = pokemon.imageUrl;
+    $modalPokemonImg.addClass('modal-img');
+
+    $('<p> id="modalPokemonHeight"</p>').appendTo('modal');
+    var $modalPokemonHeight = $('#modalPokemonHeight');
+    $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
+
+    $modalContainer.addClass('is-visible');
+  }
+
+  function hideModal() {
+    $modalContainer.removeClass('is-visible');
+  }
