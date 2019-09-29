@@ -62,3 +62,9 @@ var pokemonRepository = (function () {
       console.error(e);
     });
   }
+
+  function showDetails(pokemon) { // retrieves details from API
+    pokemonRepository.loadDetails(pokemon).then(function() {
+      showModal(pokemon);
+    });
+  }
