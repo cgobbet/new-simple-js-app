@@ -10,7 +10,7 @@ var pokemonRepository = (function () {
       alert("This is not an object");
     }
   }
-  
+
   function getAll() {
     return repository;
   }
@@ -31,4 +31,20 @@ var pokemonRepository = (function () {
     $('$pokemonButton').click(function(){
       showDetails(pokemon);
     });
+  }
+
+  function loadList() {
+    return $.ajax(apiUrl, { dataType: 'json' }).then(function (response) {
+      return response.json();
+    }).then(function (json) {
+      json.results.forEach(function (pokemon) {
+        var pokemon = {
+          name: pokemon.name,
+          detailsurl: pokemon.url
+        };
+        add (pokemon);
+      });
+    }).catch(function (e) {
+      console.error(e);
+    })
   }
