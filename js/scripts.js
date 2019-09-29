@@ -48,3 +48,17 @@ var pokemonRepository = (function () {
       console.error(e);
     })
   }
+
+  function loadDetails(pokemon) { // loads details of pokemons
+    var url = pokemon.detailsUrl;
+    return $.ajax(url, { dataType: 'json'}).then(function (response) {
+      return response.json();
+    }).then(function(details) {
+      // Now we add the details to the item
+      pokemon.imageUrl = details.sprites.front_default;
+      pokemon.height = details.height;
+      pokemon.types = Object.keys(details.types);
+    }).catch(function (e) {
+      console.error(e);
+    });
+  }
