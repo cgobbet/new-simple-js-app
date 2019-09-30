@@ -17,16 +17,16 @@ var pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     var $pokemonList = $('.pokemon-list');
-    $('<li id="pokemonListItem"></li>').appendTo('$pokemonList');
-    $('<button id="pokemonButton"></button>').appendTo('$pokemonListItem');
-
-    var $pokemonListItem = $('#pokemonListItem');
-    var $pokemonButton = $('#pokemonButton');
+    var $pokemonListItem = $('<li id="pokemonListItem"></li>');
+    var $pokemonButton = $('<button id="pokemonButton"></button>');
 
     $pokemonButton.innerText = pokemon.name;
 
-    $pokemonButton.addClass('button-class');
     $pokemonListItem.addClass('pokemon-list__item');
+    $pokemonButton.addClass('button-class');
+
+    $pokemonListItem.appendTo($pokemonList);
+    $pokemonButton.appendTo($pokemonListItem)
 
     $('$pokemonButton').click(function(){
       showDetails(pokemon);
