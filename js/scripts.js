@@ -20,9 +20,10 @@ var pokemonRepository = (function () {
     var $pokemonListItem = $('<li id="pokemonListItem"></li>');
     var $pokemonButton = $('<button id="pokemonButton"></button>');
 
-    $pokemonListItem.appendTo($pokemonList);
-    $pokemonButton.appendTo($pokemonListItem);
     $pokemonButton.innerText = pokemon.name;
+
+    $pokemonButton.appendTo($pokemonListItem);
+    $pokemonListItem.appendTo($pokemonList);
 
     $pokemonListItem.addClass('pokemon-list__item');
     $pokemonButton.addClass('button-class');
