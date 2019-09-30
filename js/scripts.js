@@ -118,7 +118,7 @@ var pokemonRepository = (function () {
 
 })(); /*  end of IIFE function */
 
-console.log(pokemonRepository);
+// console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon){
