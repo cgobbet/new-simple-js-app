@@ -20,13 +20,12 @@ var pokemonRepository = (function () {
     var $pokemonListItem = $('<li id="pokemonListItem"></li>');
     var $pokemonButton = $('<button id="pokemonButton"></button>');
 
+    $pokemonListItem.appendTo($pokemonList);
+    $pokemonButton.appendTo($pokemonListItem);
     $pokemonButton.innerText = pokemon.name;
 
-    $pokemonButton.appendTo($pokemonListItem);
-    $pokemonListItem.appendTo($pokemonList);
-
-    $pokemonListItem.addClass('pokemon-list__item');
     $pokemonButton.addClass('button-class');
+    $pokemonListItem.addClass('pokemon-list__item');
 
     $pokemonButton.click(function(){
       showDetails(pokemon);
@@ -36,9 +35,6 @@ var pokemonRepository = (function () {
   function loadList() {
     return $.ajax(apiUrl, { dataType: 'json' }).then(function (pokemon) {
       $.each(pokemon.results, function(i, pokemon) {
-      return response;
-      }).then(function (json) {
-      json.results.each(function (pokemon) {
         var pokemon = {
           name: pokemon.name,
           detailsurl: pokemon.url
@@ -47,14 +43,13 @@ var pokemonRepository = (function () {
       });
     }).catch(function (e) {
       console.error(e);
-    })})
-  };
+    });
+  }
 
   function loadDetails(pokemon) { // loads details of pokemons
     var url = pokemon.detailsUrl;
-    return $.ajax(url, { dataType: 'json'}).then(function (response) {
-      return response;
-    }).then(function(details) {
+    return $.ajax(url, { dataType: 'json'})
+    .then(function ( details) {
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
@@ -123,7 +118,7 @@ var pokemonRepository = (function () {
 // console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().$.each(function(pokemon){
+  pokemonRepository.getAll().each(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
 });
