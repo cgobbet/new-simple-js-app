@@ -19,8 +19,10 @@ var pokemonRepository = (function () {
     var $pokemonList = $('.pokemon-list');
     $('<li id="pokemonListItem"></li>').appendTo('$pokemonList');
     $('<button id="pokemonButton"></button>').appendTo('$pokemonListItem');
+
     var $pokemonListItem = $('#pokemonListItem');
     var $pokemonButton = $('#pokemonButton');
+
     $pokemonButton.innerText = pokemon.name;
 
     $pokemonButton.addClass('button-class');
@@ -68,11 +70,14 @@ var pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
+    // var $modalContainer = document.querySelector('#modal-container');
     $modalContainer.innerHTML = '';
+    // creates div for modal itself
     $('<div id="modal"></div>').appendTo('#modal-container');
     var $modal = $('#modal');
     $modal.addClass('modal');
 
+    // creates button to close modal and activate hideModal()
     $('<button id="modal-close"></button>').appendTo('#modal');
     var $modalCloseButton = $('#modal-close');
     $modalCloseButton.addClass('modal-close');
@@ -84,13 +89,14 @@ var pokemonRepository = (function () {
     $('<h2 id="$modalPokemonName"></h2>').appendTo('#modal');
     var $modalPokemonName = $('#modalPokemonName');
     $modalPokemonName.innerText = pokemon.name;
+    /*  addClass not added as class will be "modal h2" */
 
     $('<img></img>').appendTo('#modal');
     var $modalPokemonImg = $('img');
     $modalPokemonImg.src = pokemon.imageUrl;
     $modalPokemonImg.addClass('modal-img');
 
-    $('<p> id="modalPokemonHeight"</p>').appendTo('#modal');
+    $('<p id="modalPokemonHeight"></p>').appendTo('#modal');
     var $modalPokemonHeight = $('#modalPokemonHeight');
     $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
 
