@@ -99,6 +99,7 @@ var pokemonRepository = (function () {
     $('<p id="modalPokemonHeight"></p>').appendTo('#modal');
     var $modalPokemonHeight = $('#modalPokemonHeight');
     $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
+    /*  addClass not added as class will be "modal p" */
 
     $modalContainer.addClass('is-visible');
   }
