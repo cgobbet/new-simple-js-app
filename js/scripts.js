@@ -80,7 +80,7 @@ var pokemonRepository = (function () {
     var $modalCloseButton = $('<button id ="modalCloseButton"></button>');
     $modalCloseButton.addClass('modal-close');
     $modalCloseButton.innerText = 'Close';
-    $($modalCloseButton).click(function() {
+    $modalCloseButton.click(function() {
       hideModal();
     });
 
