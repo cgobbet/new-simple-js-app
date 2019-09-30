@@ -20,15 +20,14 @@ var pokemonRepository = (function () {
     var $pokemonListItem = $('<li id="pokemonListItem"></li>');
     var $pokemonButton = $('<button id="pokemonButton"></button>');
 
+    $pokemonListItem.appendTo($pokemonList);
+    $pokemonButton.appendTo($pokemonListItem);
     $pokemonButton.innerText = pokemon.name;
 
     $pokemonListItem.addClass('pokemon-list__item');
     $pokemonButton.addClass('button-class');
 
-    $pokemonListItem.appendTo($pokemonList);
-    $pokemonButton.appendTo($pokemonListItem);
-
-    $($pokemonButton).click(function(){
+    $pokemonButton.click(function(){
       showDetails(pokemon);
     });
   }
@@ -47,8 +46,7 @@ var pokemonRepository = (function () {
       });
     }).catch(function (e) {
       console.error(e);
-    })
-  })
+    })})
   };
 
   function loadDetails(pokemon) { // loads details of pokemons
