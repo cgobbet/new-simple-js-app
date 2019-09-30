@@ -17,16 +17,14 @@ var pokemonRepository = (function () {
 
   function addListItem(pokemon) {
     var $pokemonList = $('.pokemon-list');
-    var $pokemonListItem = $('li');
-    var $pokemonButton = $('button');
-
+    $('<li id="pokemonListItem"></li>').appendTo('$pokemonList');
+    $('<button id="pokemonButton"></button>').appendTo('$pokemonListItem');
+    var $pokemonListItem = $('#pokemonListItem');
+    var $pokemonButton = $('#pokemonButton');
     $pokemonButton.innerText = pokemon.name;
 
     $pokemonButton.addClass('button-class');
     $pokemonListItem.addClass('pokemon-list__item');
-
-    $('$pokemonButton').appendTo('$pokemonListItem');
-    $('$pokemonListItem').appendTo('$pokemonList');
 
     $('$pokemonButton').click(function(){
       showDetails(pokemon);
@@ -52,7 +50,7 @@ var pokemonRepository = (function () {
   function loadDetails(pokemon) { // loads details of pokemons
     var url = pokemon.detailsUrl;
     return $.ajax(url, { dataType: 'json'}).then(function (response) {
-      return response.json();
+      return response;
     }).then(function(details) {
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
@@ -71,7 +69,6 @@ var pokemonRepository = (function () {
 
   function showModal(pokemon) {
     $modalContainer.innerHTML = '';
-    // $('#modal-container').append('<div id='modal'></div>');
     $('<div id="modal"></div>').appendTo('#modal-container');
     var $modal = $('#modal');
     $modal.addClass('modal');
@@ -84,16 +81,16 @@ var pokemonRepository = (function () {
       hideModal();
     });
 
-    $('<h2 id="$modalPokemonName"></h2>').appendTo('modal');
+    $('<h2 id="$modalPokemonName"></h2>').appendTo('#modal');
     var $modalPokemonName = $('#modalPokemonName');
     $modalPokemonName.innerText = pokemon.name;
 
-    $('<img></img>').appendTo('modal');
+    $('<img></img>').appendTo('#modal');
     var $modalPokemonImg = $('img');
     $modalPokemonImg.src = pokemon.imageUrl;
     $modalPokemonImg.addClass('modal-img');
 
-    $('<p> id="modalPokemonHeight"</p>').appendTo('modal');
+    $('<p> id="modalPokemonHeight"</p>').appendTo('#modal');
     var $modalPokemonHeight = $('#modalPokemonHeight');
     $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
 
@@ -113,6 +110,8 @@ var pokemonRepository = (function () {
   };
 
 })(); /*  end of IIFE function */
+
+console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon){
