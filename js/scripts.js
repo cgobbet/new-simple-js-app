@@ -67,6 +67,7 @@ var pokemonRepository = (function () {
 
   function showModal(pokemon) {
     $modalContainer.innerHTML = '';
+    // $modalContainer.text('');
     // creates div for modal itself
     var $modal = $('<div id="modal"></div>');
     $modal.addClass('modal');
@@ -74,13 +75,13 @@ var pokemonRepository = (function () {
     // creates button to close modal and activate hideModal()
     var $modalCloseButton = $('<button id ="modalCloseButton"></button>');
     $modalCloseButton.addClass('modal-close');
-    $modalCloseButton.innerText = 'Close';
+    $modalCloseButton.text('Close');
     $modalCloseButton.click(function() {
       hideModal();
     });
 
     var $modalPokemonName = $('<h2></h2>');
-    $modalPokemonName.innerText = pokemon.name;
+    $modalPokemonName.text(pokemon.name);
     /*  addClass not added as class will be "modal h2" */
 
     var $modalPokemonImg = $('<img></img>');
