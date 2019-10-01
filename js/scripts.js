@@ -140,13 +140,3 @@ pokemonRepository.loadList().then(function() {
     pokemonRepository.addListItem(pokemon);
   });
 });
-
-// loading message function
-function loading() {
-  var $load = $('loading');
-  if ($load.style.display === "none") {
-    $load.style.display = "block";
-  } else {
-    $load.style.display = "none";
-  }
-}
