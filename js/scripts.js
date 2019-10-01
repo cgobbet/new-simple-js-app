@@ -71,9 +71,7 @@ var pokemonRepository = (function() {
   }
 
   function showModal(pokemon) {
-    // $modalContainer.innerHTML = '';
     $($modalContainer).html('');
-    // $modalContainer.text('');
     // creates div for modal itself
     var $modal = $('<div id="modal"></div>');
     $modal.addClass('modal');
@@ -96,7 +94,6 @@ var pokemonRepository = (function() {
 
     var $modalPokemonHeight = $('<p class="capital"></p>');
     $modalPokemonHeight.text(pokemon.name + ' is ' + (pokemon.height / 10) + 'm tall and weighs ' + (pokemon.weight / 10) + ' kg!');
-    // $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
     /*  addClass not added as class will be "modal p" */
 
     $modalCloseButton.appendTo($modal);
@@ -132,8 +129,6 @@ var pokemonRepository = (function() {
 
 })();
 /*  end of IIFE function */
-
-// console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
   pokemonRepository.getAll().forEach(function(pokemon) {

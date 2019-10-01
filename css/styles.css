@@ -26,10 +26,6 @@ html, body {
   -webkit-animation: slide 20s linear infinite;
 }
 
-/* .hero-bkg-animated h1 {
-  font-family: sans-serif;
-} */
-
 @-webkit-keyframes slide {
     from { background-position: 0 0; }
     to { background-position: -400px 0; }
@@ -203,10 +199,6 @@ li a {
   box-shadow: 0 3px #272727;
   transform: translateY(1px);
 }
-
-/* start of the "Loading..." message element items  */
-
-
 
 /* start of modal elements  */
 
