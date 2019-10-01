@@ -49,7 +49,7 @@ var pokemonRepository = (function () {
   function loadDetails(pokemon) { // loads details of pokemons
     var url = pokemon.detailsUrl;
     return $.ajax(url, { dataType: 'json'})
-    .then(function ( details) {
+    .then(function (details) {
       // Now we add the details to the item
       pokemon.imageUrl = details.sprites.front_default;
       pokemon.height = details.height;
