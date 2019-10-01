@@ -249,11 +249,11 @@ li a {
   max-width: 40%;
   text-align: left;
   animation: fadein 1s;
-  -moz-animation: fadein 1s;
+  -moz-animation: fadein 1.5s;
   /* Firefox */
-  -webkit-animation: fadein 1s;
+  -webkit-animation: fadein 1.5s;
   /* Safari and Chrome */
-  -o-animation: fadein 1s;
+  -o-animation: fadein 1.5s;
   /* Opera */
 }
 
