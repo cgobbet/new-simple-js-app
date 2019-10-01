@@ -107,6 +107,16 @@ var pokemonRepository = (function () {
     $modalContainer.removeClass('is-visible');
   }
 
+  $( 'body' ).click(function() {
+    hideModal();
+  });
+
+  $(document).keydown(function(event) {
+    if (event.keyCode == 27) {
+      hideModal();
+    }
+  });
+
   return {
     add: add,
     getAll: getAll,
