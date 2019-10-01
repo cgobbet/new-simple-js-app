@@ -58,8 +58,16 @@ h2 {
 
 h3 {
   font-family: "Press Start 2P", sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
+  color: #5E5E5E;
+  animation: fadein 4s;
+  -moz-animation: fadein 4s;
+  /* Firefox */
+  -webkit-animation: fadein 4s;
+  /* Safari and Chrome */
+  -o-animation: fadein 4s;
+  /* Opera */
 }
 
 a {
@@ -84,15 +92,15 @@ li a {
 
 .title {
   font-family: "Press Start 2P", sans-serif;
-  font-size: 42px;
+  font-size: 48px;
   font-weight: bold;
   text-align: center;
-    animation: fadein 3s;
-  -moz-animation: fadein 3s;
+  animation: fadein 2s;
+  -moz-animation: fadein 2s;
   /* Firefox */
-  -webkit-animation: fadein 3s;
+  -webkit-animation: fadein 2s;
   /* Safari and Chrome */
-  -o-animation: fadein 3s;
+  -o-animation: fadein 2s;
   /* Opera */
 }
 
@@ -106,7 +114,7 @@ li a {
 
 .pokemon-content {
   align-items: center;
-  padding: 70px 0;
+  /* padding: 70px 0; */
   text-align: center;
 }
 
@@ -130,20 +138,20 @@ li a {
   cursor: pointer;
   display: inline-block;
   font-family: "Press Start 2P", sans-serif;
-  font-size: 18px;
+  font-size: 22px;
   opacity: 0.9;
   outline: none;
-  padding: 15px 15px;
+  padding: 12px 12px;
   text-align: center;
   text-decoration: none;
   transition: 0.6s;
   width: 20%;
-  animation: fadein 2s;
-  -moz-animation: fadein 2s;
+  animation: fadein 3s;
+  -moz-animation: fadein 3s;
   /* Firefox */
-  -webkit-animation: fadein 2s;
+  -webkit-animation: fadein 3s;
   /* Safari and Chrome */
-  -o-animation: fadein 2s;
+  -o-animation: fadein 3s;
   /* Opera */
 }
 
@@ -192,13 +200,13 @@ li a {
 
 .button-class:active {
   background-color: #b6323a;
-  box-shadow: 0 1px #272727;
+  box-shadow: 0 3px #272727;
   transform: translateY(1px);
 }
 
 /* start of the "Loading..." message element items  */
 
-#loading {
+/* #loading {
   color: #781820;
   font-family: "Press Start 2P", sans-serif;
   font-size: 16px;
@@ -211,7 +219,7 @@ li a {
   50% {
     opacity: 0;
   }
-}
+} */
 
 /* start of modal elements  */
 
