@@ -90,7 +90,7 @@ var pokemonRepository = (function () {
     $modalPokemonImg.addClass('modal-img');
 
     var $modalPokemonHeight = $('<p></p>');
-    $modalPokemonHeight.text(pokemon.name + " is " + (pokemon.height / 10) + "m tall!");
+    $modalPokemonHeight.text(pokemon.name + ' is ' + (pokemon.height / 10) + 'm tall!');
     // $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
     /*  addClass not added as class will be "modal p" */
 
