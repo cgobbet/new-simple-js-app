@@ -1,10 +1,10 @@
-var pokemonRepository = (function () {
+var pokemonRepository = (function() {
   var repository = [];
-  var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+  var apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=200';
   var $modalContainer = $('#modal-container');
 
   function add(pokemon) {
-    if(typeof(pokemon) === 'object') {
+    if (typeof(pokemon) === 'object') {
       repository.push(pokemon);
     } else {
       alert("This is not an object");
@@ -27,36 +27,40 @@ var pokemonRepository = (function () {
     $pokemonButton.addClass('button-class');
     $pokemonListItem.addClass('pokemon-list__item');
 
-    $pokemonButton.click(function(){
+    $pokemonButton.click(function() {
       showDetails(pokemon);
     });
   }
 
   function loadList() {
-    return $.ajax(apiUrl, { dataType: 'json' }).then(function (pokemon) {
+    return $.ajax(apiUrl, {
+      dataType: 'json'
+    }).then(function(pokemon) {
       $.each(pokemon.results, function(i, pokemon) {
         var pokemon = {
           name: pokemon.name,
           detailsurl: pokemon.url
         };
-        add (pokemon);
+        add(pokemon);
       });
-    }).catch(function (e) {
+    }).catch(function(e) {
       console.error(e);
     });
   }
 
   function loadDetails(pokemon) { // loads details of pokemons
     var url = pokemon.detailsurl;
-    return $.ajax(url, { dataType: 'json'})
-    .then(function (details) {
-      // Now we add the details to the item
-      pokemon.imageUrl = details.sprites.front_default;
-      pokemon.height = details.height;
-      pokemon.types = Object.keys(details.types);
-    }).catch(function (e) {
-      console.error(e);
-    });
+    return $.ajax(url, {
+        dataType: 'json'
+      })
+      .then(function(details) {
+        // Now we add the details to the item
+        pokemon.imageUrl = details.sprites.front_default;
+        pokemon.height = details.height;
+        pokemon.types = Object.keys(details.types);
+      }).catch(function(e) {
+        console.error(e);
+      });
   }
 
   function showDetails(pokemon) { // retrieves details from API
@@ -107,7 +111,7 @@ var pokemonRepository = (function () {
     $modalContainer.removeClass('is-visible');
   }
 
-  $( 'body' ).click(function() {
+  $('body').click(function() {
     hideModal();
   });
 
@@ -131,7 +135,7 @@ var pokemonRepository = (function () {
 // console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().forEach(function(pokemon){
+  pokemonRepository.getAll().forEach(function(pokemon) {
     pokemonRepository.addListItem(pokemon);
   });
 });
