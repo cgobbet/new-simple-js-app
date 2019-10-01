@@ -85,8 +85,8 @@ var pokemonRepository = (function () {
     $modalPokemonName.text(pokemon.name);
     /*  addClass not added as class will be "modal h2" */
 
-    var $modalPokemonImg = $('<img></img>');
-    $modalPokemonImg.src = pokemon.imageUrl;
+    var $modalPokemonImg = $('<img class="modal-img"></img>');
+    $modalPokemonImg.attr('src', pokemon.imageUrl);
     $modalPokemonImg.addClass('modal-img');
 
     var $modalPokemonHeight = $('<p></p>');
