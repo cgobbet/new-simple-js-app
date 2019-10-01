@@ -20,6 +20,7 @@ p {
   margin: 5px;
   padding: 5px;
   text-align: center;
+  line-height: 150%;
 }
 
 h1 {
@@ -70,6 +71,10 @@ li a {
   /* Safari and Chrome */
   -o-animation: fadein 3s;
   /* Opera */
+}
+
+.capital {
+  text-transform:capitalize;
 }
 
 /* end of HTML page structure items  */
