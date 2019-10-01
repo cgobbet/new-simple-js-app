@@ -66,7 +66,8 @@ var pokemonRepository = (function () {
   }
 
   function showModal(pokemon) {
-    $modalContainer.innerHTML = '';
+    // $modalContainer.innerHTML = '';
+    $($modalContainer).html('');
     // $modalContainer.text('');
     // creates div for modal itself
     var $modal = $('<div id="modal"></div>');
