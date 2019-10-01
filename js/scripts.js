@@ -22,7 +22,7 @@ var pokemonRepository = (function () {
 
     $pokemonListItem.appendTo($pokemonList);
     $pokemonButton.appendTo($pokemonListItem);
-    $pokemonButton.innerText = pokemon.name;
+    $pokemonButton.text(pokemon.name);
 
     $pokemonButton.addClass('button-class');
     $pokemonListItem.addClass('pokemon-list__item');
@@ -118,7 +118,7 @@ var pokemonRepository = (function () {
 // console.log(pokemonRepository);
 
 pokemonRepository.loadList().then(function() {
-  pokemonRepository.getAll().each(function(pokemon){
+  pokemonRepository.getAll().forEach(function(pokemon){
     pokemonRepository.addListItem(pokemon);
   });
 });
