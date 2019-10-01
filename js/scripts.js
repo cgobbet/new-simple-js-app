@@ -47,7 +47,7 @@ var pokemonRepository = (function () {
   }
 
   function loadDetails(pokemon) { // loads details of pokemons
-    var url = pokemon.detailsUrl;
+    var url = pokemon.detailsurl;
     return $.ajax(url, { dataType: 'json'})
     .then(function (details) {
       // Now we add the details to the item
