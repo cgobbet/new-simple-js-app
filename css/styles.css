@@ -6,13 +6,36 @@ Tertiary Color (Yellow): #cead00;
 */
 
 /*  structure items */
-body {
+html, body {
   background-color: #f7f8fb;
   color: black;
   font-family: "Roboto", sans-serif;
   font-size: 18px;
   text-align: center;
+  margin: 0; padding: 0;
 }
+
+.hero-bkg-animated {
+  background: gray url(https://subtlepatterns.com/patterns/geometry2.png) repeat 0 0;
+  width: 100%;
+  margin: 0;
+  text-align: center;
+  height: 2300px;
+  padding-top: 120px;
+  box-sizing: border-box;
+  -webkit-animation: slide 20s linear infinite;
+}
+
+.hero-bkg-animated h1 {
+  font-family: sans-serif;
+}
+
+@-webkit-keyframes slide {
+    from { background-position: 0 0; }
+    to { background-position: -400px 0; }
+}
+
+/* Background animation by subz - https://tinyurl.com/y4ezm4bs */
 
 p {
   font-family: "Lato", sans-serif;
@@ -83,7 +106,7 @@ li a {
 
 .pokemon-content {
   align-items: center;
-  padding: 70px 0;
+  padding: 10px 0;
   text-align: center;
 }
 
