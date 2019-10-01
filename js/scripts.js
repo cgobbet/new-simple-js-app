@@ -55,7 +55,8 @@ var pokemonRepository = (function() {
       })
       .then(function(details) {
         // Now we add the details to the item
-        pokemon.imageUrl = details.sprites.front_default;
+        pokemon.imageUrl = details.sprites.front_shiny;
+        pokemon.weight = details.weight;
         pokemon.height = details.height;
         pokemon.types = Object.keys(details.types);
       }).catch(function(e) {
@@ -85,7 +86,7 @@ var pokemonRepository = (function() {
       hideModal();
     });
 
-    var $modalPokemonName = $('<h2></h2>');
+    var $modalPokemonName = $('<h2 class="capital"></h2>');
     $modalPokemonName.text(pokemon.name);
     /*  addClass not added as class will be "modal h2" */
 
@@ -93,8 +94,8 @@ var pokemonRepository = (function() {
     $modalPokemonImg.attr('src', pokemon.imageUrl);
     $modalPokemonImg.addClass('modal-img');
 
-    var $modalPokemonHeight = $('<p></p>');
-    $modalPokemonHeight.text(pokemon.name + ' is ' + (pokemon.height / 10) + 'm tall!');
+    var $modalPokemonHeight = $('<p class="capital"></p>');
+    $modalPokemonHeight.text(pokemon.name + ' is ' + (pokemon.height / 10) + 'm tall and weighs ' + (pokemon.weight / 10) + ' kg!');
     // $modalPokemonHeight.innerText = pokemon.name + " is " + (pokemon.height / 10) + "m tall!";
     /*  addClass not added as class will be "modal p" */
 
