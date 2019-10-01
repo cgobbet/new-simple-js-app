@@ -21,14 +21,14 @@ html, body {
   margin: 0;
   text-align: center;
   height: 4000px;
-  padding-top: 120px;
+  padding-top: 40px;
   box-sizing: border-box;
   -webkit-animation: slide 20s linear infinite;
 }
 
-.hero-bkg-animated h1 {
+/* .hero-bkg-animated h1 {
   font-family: sans-serif;
-}
+} */
 
 @-webkit-keyframes slide {
     from { background-position: 0 0; }
@@ -114,7 +114,7 @@ li a {
 
 .pokemon-content {
   align-items: center;
-  /* padding: 70px 0; */
+  padding: 50px 0;
   text-align: center;
 }
 
